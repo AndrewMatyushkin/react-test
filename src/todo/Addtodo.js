@@ -5,11 +5,9 @@ function AddTodo(onCreate) {
     const [value, setValue] = useState('')
 
     function submitHandler(event) {
-
         event.preventDefault()
-
-        if(value.trim()) {
-            onCreate(value)
+        if(value.trim(value)) {
+            onCreate()
             setValue('')
         }
     }
@@ -23,7 +21,8 @@ function AddTodo(onCreate) {
 }
 
 AddTodo.protoTypes = {
-    onCreate: PropTypes.func.isRequired
+    onCreate: PropTypes.func.isRequired,
+    submitHandler: PropTypes.func.isRequired
 }
 
 export default AddTodo
